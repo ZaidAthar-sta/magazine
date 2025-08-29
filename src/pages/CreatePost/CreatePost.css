@@ -1,0 +1,27 @@
+.create-post-card {
+  max-width: 700px;
+  margin: 0 auto;
+  background: #fdfdfd;
+  border-left: 5px solid #0d6efd;
+}
+
+.create-post-card h2 {
+  font-weight: 600;
+}
+
+textarea.form-control {
+  resize: vertical;
+}
+
+.btn-primary {
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.form-select {
+    width: 14rem !important;
+}
+
+.form-image {
+    width: 16rem;
+}
