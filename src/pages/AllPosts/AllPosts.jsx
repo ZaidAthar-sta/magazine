@@ -144,8 +144,11 @@ const AllPosts = () => {
 
   return (
     <div className="mt-5 container">
-      <h2 className="mb-4 text-center fw-bold animate-title">
-        📝 All Blog Posts
+      <h2 className="mb-4 p-3 text-center fw-bold animate-title">
+        📝   <i>
+            <span  style={{ color: "#fb8c00" }} > All </span>
+            <span style={{ color: "red" }}>Posts</span>
+          </i>
       </h2>
 
       {loading && <p className="text-center">Loading...</p>}
@@ -183,9 +186,22 @@ const AllPosts = () => {
                           {post.category}
                         </span>
                       )}
-                      <p className="overlay-author">
-                        By {post.author?.name || "Unknown"}
+                      <p className="overlay-author d-flex align-items-center gap-2">
+                        {post.author?.imageURL && (
+                          <img
+                            src={post.author.imageURL}
+                            alt={post.author.name}
+                            className="rounded-circle"
+                            style={{
+                              width: "50px",
+                              height: "50px",
+                              objectFit: "cover",
+                            }}
+                          />
+                        )}
+                        <span>{post.author?.name || "Unknown"}</span>
                       </p>
+
                       <p className="text-light small">
                         💬 {count} {count === 1 ? "comment" : "comments"}
                       </p>

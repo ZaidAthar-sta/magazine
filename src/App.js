@@ -18,6 +18,7 @@ import About from "./pages/About/About";
 import Contact from "./pages/Contact/Contact";
 import UpdateProfile from "./pages/UpdateProfile/UpdateProfile";
 import CategoryPage from "./pages/CategoryPage/CategoryPage";
+import "@fontsource/mulish";
 
 function App() {
   const { backendURL } = useContext(blogContext);

@@ -74,7 +74,7 @@ const CreatePost = () => {
             <label htmlFor="title" className="form-label fw-semibold">Title</label>
             <input
               type="text"
-              className="form-control"
+              className="form-control border-0 border-bottom"
               id="title"
               placeholder="Enter your blog title"
               value={title}
@@ -86,7 +86,7 @@ const CreatePost = () => {
           <div className="mb-3">
             <label htmlFor="body" className="form-label fw-semibold">Body</label>
             <textarea
-              className="form-control"
+              className="form-control "
               id="body"
               rows="6"
               placeholder="Start writing your story..."

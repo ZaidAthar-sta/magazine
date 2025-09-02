@@ -78,6 +78,10 @@
   font-weight: 500;
 }
 
+.animate-title {
+  background-color: #212529;
+}
+
 /* Responsive tweaks */
 @media (max-width: 768px) {
   .image-overlay-container {

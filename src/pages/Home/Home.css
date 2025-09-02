@@ -18,13 +18,13 @@
   color: #fff;
 }
 
-.btn-primary {
-  background-color: red;
-  border-color: red;
+.explore-btn  {
+  background-color: red !important;
+  border-color: red !important;
 }
 
-.btn-primary:hover,
-.btn-primary:focus {
-  background-color: #fb8c00;
-  border-color: #fb8c00;
+.explore-btn:hover,
+.explore-btn:focus {
+  background-color: #fb8c00 !important;
+  border-color: #fb8c00 !important;
 }
