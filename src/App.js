@@ -26,7 +26,7 @@ function App() {
   return (
     <>
       <div className="App">
-        <BrowserRouter basename="/magazine">
+        <BrowserRouter>
           {/* <h1>Home Page</h1> */}
           <ToastContainer />
           <Routes>
