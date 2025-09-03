@@ -1,6 +1,6 @@
 import React, { useState, useContext } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "./CreatePost.css"; // 🆕 Import custom CSS
+import "./CreatePost.css";
 import blogContext from "../../context/blogContext";
 import axios from "axios";
 import { toast } from "react-toastify";
@@ -66,40 +66,40 @@ const CreatePost = () => {
   };
 
   return (
-    <div className="container my-5">
-      <div className="create-post-card shadow p-4 rounded bg-white">
-        <h2 className="text-center mb-4 text-primary">✍️ Create a New Blog Post</h2>
+    <div className="container create-post-container my-5">
+      <div className="create-post-wrapper mx-auto shadow-sm p-5 rounded">
+        <h2 className="text-center mb-4">📝 Create New Post</h2>
         <form onSubmit={handleCreate} encType="multipart/form-data">
-          <div className="mb-3">
-            <label htmlFor="title" className="form-label fw-semibold">Title</label>
+          <div className="mb-4">
+            <label htmlFor="title" className="form-label">Title</label>
             <input
               type="text"
-              className="form-control border-0 border-bottom"
+              className="form-control form-control-lg"
               id="title"
-              placeholder="Enter your blog title"
+              placeholder="Enter blog title"
               value={title}
               onChange={(e) => setTitle(e.target.value)}
               required
             />
           </div>
 
-          <div className="mb-3">
-            <label htmlFor="body" className="form-label fw-semibold">Body</label>
+          <div className="mb-4">
+            <label htmlFor="body" className="form-label">Content</label>
             <textarea
-              className="form-control "
+              className="form-control form-control-lg"
               id="body"
               rows="6"
-              placeholder="Start writing your story..."
+              placeholder="Write your blog content here..."
               value={body}
               onChange={(e) => setBody(e.target.value)}
               required
             ></textarea>
           </div>
 
-          <div className="mb-3">
-            <label htmlFor="category" className="form-label fw-semibold">Category</label>
+          <div className="mb-4">
+            <label htmlFor="category" className="form-label">Category</label>
             <select
-              className="form-select"
+              className="form-select form-select-lg"
               id="category"
               value={category}
               onChange={(e) => setCategory(e.target.value)}
@@ -115,10 +115,10 @@ const CreatePost = () => {
           </div>
 
           <div className="mb-4">
-            <label htmlFor="image" className="form-label fw-semibold">Upload Image</label>
+            <label htmlFor="image" className="form-label">Upload Cover Image</label>
             <input
               type="file"
-              className="form-control form-image"
+              className="form-control"
               id="image"
               accept="image/*"
               onChange={(e) => setImage(e.target.files[0])}
@@ -126,8 +126,8 @@ const CreatePost = () => {
           </div>
 
           <div className="text-center">
-            <button type="submit" className="btn btn-primary w-50">
-              🚀 Publish Post
+            <button type="submit" className="btn btn-gradient w-50 py-2">
+              🚀 Publish
             </button>
           </div>
         </form>

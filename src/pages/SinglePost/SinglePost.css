@@ -39,6 +39,8 @@
 
 .post-div {
   display: flex;
+  text-decoration: none;
+  
 }
 
 .post-div img {

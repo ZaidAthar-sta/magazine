@@ -1,6 +1,6 @@
 // IMPORTS
 import { useContext, useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import axios from "axios";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./SinglePost.css";
@@ -137,7 +137,7 @@ const SinglePost = () => {
               >
                 {relatedPosts.length > 0 ? (
                   relatedPosts.map((otherPost) => (
-                    <div className="post-div my-4 mx-3 " key={otherPost._id}>
+                    <Link to={`/post/${otherPost._id}`} className="post-div my-4 mx-3 " key={otherPost._id}>
                       <img
                         src={otherPost.imageUrl || defaultUserImg}
                         alt="post-img"
@@ -149,14 +149,14 @@ const SinglePost = () => {
                         }}
                       />
                       <div className="title">
-                        <h6 style={{ fontSize: "14px" }}>
+                        <h6 style={{ fontSize: "14px",color:"#000000" }}>
                           <b>{otherPost.title}</b>
                         </h6>
                         <p style={{ fontSize: "14px",color:"silver" }}>
                           {new Date(otherPost.createdAt).toLocaleDateString()}
                         </p>
                       </div>
-                    </div>
+                    </Link>
                   ))
                 ) : (
                   <p className="text-muted text-center">

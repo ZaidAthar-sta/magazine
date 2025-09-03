@@ -29,6 +29,9 @@
   transform: scale(1.03);
 }
 
+.contact-container h2 {
+  background-color: #212529;
+}
 @keyframes slideDown {
   from {
     opacity: 0;

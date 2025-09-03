@@ -4,6 +4,7 @@ import blogContext from "../../context/blogContext";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { jwtDecode } from "jwt-decode";
+import PostCard from "../../components/PostCard/PostCard";
 import "./AllPosts.css";
 
 const AllPosts = () => {
@@ -143,142 +144,30 @@ const AllPosts = () => {
   };
 
   return (
-    <div className="mt-5 container">
-      <h2 className="mb-4 p-3 text-center fw-bold animate-title">
-        📝   <i>
-            <span  style={{ color: "#fb8c00" }} > All </span>
-            <span style={{ color: "red" }}>Posts</span>
-          </i>
-      </h2>
+    <>
+      <div className="container">
+        <div className="posts-heading">
+          
+            <h2 className="p-3 mb-5">
+              <span> <b>POPULAR</b> </span>{" "}
+              <span > <b>POSTS</b> </span>
+            </h2>
+     
+        </div>
 
-      {loading && <p className="text-center">Loading...</p>}
-      {error && <p className="text-danger text-center">{error}</p>}
-
-      {posts.length === 0 && !loading && (
-        <p className="text-center text-muted">No posts found.</p>
-      )}
-
-      <div className="row">
-        {posts.map((post) => {
-          const isAuthor = post.author?._id === currentUserId;
-          const count = commentsCount[post._id] || 0;
-          const isVisible = visibleComments[post._id];
-
-          return (
-            <div className="col-md-6 mb-4" key={post._id}>
-              <div
-                className={`card post-card shadow-sm animate-card ${
-                  isAuthor ? "border-primary" : ""
-                }`}
-              >
-                {post.imageUrl && (
-                  <div className="image-overlay-container position-relative">
-                    <img
-                      src={post.imageUrl}
-                      alt={post.title}
-                      className="card-img-top post-image"
-                    />
-                    <div className="image-overlay d-flex flex-column justify-content-end p-3">
-                      <h5 className="overlay-title">{post.title}</h5>
-
-                      {post.category && (
-                        <span className="badge bg-info text-dark category-badge mb-2">
-                          {post.category}
-                        </span>
-                      )}
-                      <p className="overlay-author d-flex align-items-center gap-2">
-                        {post.author?.imageURL && (
-                          <img
-                            src={post.author.imageURL}
-                            alt={post.author.name}
-                            className="rounded-circle"
-                            style={{
-                              width: "50px",
-                              height: "50px",
-                              objectFit: "cover",
-                            }}
-                          />
-                        )}
-                        <span>{post.author?.name || "Unknown"}</span>
-                      </p>
-
-                      <p className="text-light small">
-                        💬 {count} {count === 1 ? "comment" : "comments"}
-                      </p>
-                      <div className="overlay-buttons mt-2">
-                        {isAuthor && (
-                          <button
-                            className="btn btn-sm btn-outline-light me-2"
-                            onClick={() => handleDelete(post._id)}
-                          >
-                            Delete
-                          </button>
-                        )}
-                        <button
-                          className="btn btn-sm btn-outline-light me-2"
-                          onClick={() => toggleComments(post._id)}
-                        >
-                          {isVisible ? "Hide" : "Comments"}
-                        </button>
-                        <Link
-                          to={`/post/${post._id}`}
-                          className="btn btn-sm btn-outline-light"
-                        >
-                          View
-                        </Link>
-                      </div>
-                    </div>
-                  </div>
-                )}
-                {/* Show Comments if visible */}
-                {isVisible && (
-                  <div className="card-body bg-light">
-                    <h6 className="fw-bold mb-2">Comments:</h6>
-                    {comments[post._id]?.length > 0 ? (
-                      <ul className="list-group list-group-flush">
-                        {comments[post._id].map((comment) => (
-                          <li key={comment._id} className="list-group-item">
-                            <strong>
-                              {comment.author?.name || "Anonymous"}:
-                            </strong>{" "}
-                            {comment.content}
-                          </li>
-                        ))}
-                      </ul>
-                    ) : (
-                      <p className="text-muted">No comments yet.</p>
-                    )}
-
-                    {token && (
-                      <div className="mt-3">
-                        <textarea
-                          className="form-control"
-                          rows="2"
-                          placeholder="Write a comment..."
-                          value={newComment[post._id] || ""}
-                          onChange={(e) =>
-                            setNewComment((prev) => ({
-                              ...prev,
-                              [post._id]: e.target.value,
-                            }))
-                          }
-                        ></textarea>
-                        <button
-                          className="btn btn-sm btn-primary mt-2"
-                          onClick={() => handleCommentSubmit(post._id)}
-                        >
-                          Post Comment
-                        </button>
-                      </div>
-                    )}
-                  </div>
-                )}
-              </div>
+        <div className="row ">
+          {posts.map((post) => (
+            <div key={post._id} className="col-lg-4 mb-4">
+              <PostCard
+                post={post}
+                isAuthor={post.author?._id === currentUserId}
+                commentCount={commentsCount[post._id] || 0}
+              />
             </div>
-          );
-        })}
+          ))}
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

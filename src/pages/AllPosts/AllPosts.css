@@ -1,6 +1,14 @@
+:root {
+  --primary-font: "Mulish", sans-serif;
+}
+
+.posts-heading h2 {
+  font-family: var(--primary-font);
+}
+
 .image-overlay-container {
   position: relative;
-  height: 250px; /* fixed height for consistency */
+  height: 250px; /*fixed height for consistency */
   overflow: hidden;
   border-radius: 0.25rem; /* same as card */
 }
@@ -63,9 +71,23 @@
 }
 
 .overlay-buttons .btn:hover {
-  background-color: rgba(255, 255, 255, 0.2);
+  /* background-color: rgba(255, 255, 255, 0.2); */
   color: #fff;
   text-decoration: none;
+}
+
+.overlay-buttons .delete-btn {
+  font-size: 0.75rem;
+  padding: 4px 10px;
+  border-radius: 0.3rem;
+  background-color: transparent;
+  transition: background-color 0.3s ease;
+}
+
+.overlay-buttons .delete-btn:hover {
+  background-color: red;
+  border-color: red;
+  color: white;
 }
 
 .category-badge {
@@ -82,6 +104,12 @@
   background-color: #212529;
 }
 
+.posts-heading h2 {
+  /* background-color: #212529; */
+  font-size: 32px;
+  color: #212529;
+  font-family: var(--primary-font);
+}
 /* Responsive tweaks */
 @media (max-width: 768px) {
   .image-overlay-container {
