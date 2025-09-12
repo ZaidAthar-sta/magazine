@@ -20,8 +20,10 @@ const Footer = () => {
             <p>
               Welcome to MyBlog — your go-to platform for inspiring travel
               stories, tech insights, wellness tips, and much more. Join our
-              community of passionate writers and readers.
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iure sapiente reiciendis id optio voluptates fugiat, aperiam assumenda nobis? Saepe harum facilis aspernatur 
+              community of passionate writers and readers. Lorem, ipsum dolor
+              sit amet consectetur adipisicing elit. Iure sapiente reiciendis id
+              optio voluptates fugiat, aperiam assumenda nobis? Saepe harum
+              facilis aspernatur
             </p>
           </div>
 
@@ -90,6 +92,7 @@ const Footer = () => {
               </a>
             </div>
           </div>
+     
         </div>
         <hr className="bg-light" />
         <p className="text-center m-0">

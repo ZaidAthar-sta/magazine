@@ -2,6 +2,7 @@ import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import AllPosts from "../AllPosts/AllPosts";
 import "./Home.css";
+import NewsLetter from "../../components/NewsLetter/NewsLetter";
 
 const Home = () => {
   return (
@@ -27,6 +28,9 @@ const Home = () => {
 
       <div className="all-posts mt-5">
         <AllPosts />
+      </div>
+      <div className="newsletter">
+      <NewsLetter />
       </div>
     </div>
   );

@@ -41,7 +41,7 @@ function App() {
                 <Route
                   path="/post/:id"
                   element={<SinglePost backendURL={backendURL} />}
-                />
+                />    
                 <Route path="/post/edit/:id" element={<UpdatePost />} />
                 <Route path="/about" element={<About />} />
                 <Route path="/contact" element={<Contact />} />

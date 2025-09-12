@@ -1,6 +1,5 @@
 .custom-navbar {
   padding: 0.75rem 1.5rem;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .navbar-brand {
@@ -10,13 +9,17 @@
 }
 
 .nav-link {
-  color: #d1d1d1 !important;
+  /* color: white !important; */
   margin-right: 1rem;
   transition: color 0.3s ease;
 }
 
 .nav-link:hover {
-  color: #ffffff !important;
+  color: gray !important;
+}
+
+.nav-link.active{
+  color: gray;
 }
 
 .btn-outline-light {
@@ -33,4 +36,34 @@
 .dropdown-item:hover {
   background-color: #f8f9fa;
   font-weight: 500;
+}
+
+/* Transparent Navbar Styles */
+.transparent-nav {
+  background-color: transparent;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.transparent-nav .navbar-brand,
+.transparent-nav .nav-link {
+  color: #fff !important;
+}
+
+.transparent-nav .nav-link:hover {
+  color: #f1f1f1 !important;
+}
+
+/* Scrolled Navbar Styles */
+.scrolled-nav {
+  background-color: white !important;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.scrolled-nav .navbar-brand,
+.scrolled-nav .nav-link {
+  color: #000 !important;
+}
+
+.scrolled-nav .nav-link:hover {
+  color: #333 !important;
 }

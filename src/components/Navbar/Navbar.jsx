@@ -1,33 +1,48 @@
-import React from "react";
-import { useNavigate, Link } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { useNavigate, Link, useLocation } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "./Navbar.css"; // Optional custom styles
-// import categories from "../../data/categories.js";
+import "./Navbar.css";
 
 const categories = [
-  "technology",
-  "travel",
-  "health",
-  "finance",
-  "lifestyle",
-  "education",
-  "sports",
+  "technology", "travel", "health", "finance",
+  "lifestyle", "education", "sports",
 ];
 
 const Navbar = () => {
+  const [scrolled, setScrolled] = useState(false);
   const navigate = useNavigate();
+  const location = useLocation();
+
+  const isHome = location.pathname === "/";
 
   const handleLogOut = () => {
     localStorage.removeItem("token");
     navigate("/login");
   };
 
+  useEffect(() => {
+    if (!isHome) return;
+
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 80);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [isHome]);
+
+  const navClass = isHome
+    ? scrolled
+      ? "scrolled-nav bg-white navbar-light shadow-sm fixed-top"
+      : "transparent-nav fixed-top"
+    : "navbar-light bg-white";
+
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark custom-navbar">
+    <nav className={`navbar navbar-expand-lg p-3 ${navClass}`}>
       <div className="container-fluid">
-        <Link className="navbar-brand" to="/">
+        <Link className="navbar-brand fw-bold" to="/">
           <i>
-            <span  style={{ color: "#fb8c00" }} > Morning's </span>
+            <span style={{ color: "#fb8c00" }}>Morning's </span>
             <span style={{ color: "red" }}>Magazine</span>
           </i>
         </Link>
@@ -47,18 +62,11 @@ const Navbar = () => {
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
-              <Link className="nav-link" to="/all">
-                All Posts
-              </Link>
+              <Link className="nav-link" to="/all">All Posts</Link>
             </li>
-
             <li className="nav-item">
-              <Link className="nav-link" to="/post/create">
-                Create Post
-              </Link>
+              <Link className="nav-link" to="/post/create">Create Post</Link>
             </li>
-
-            {/* 👇 Categories Dropdown */}
             <li className="nav-item dropdown">
               <span
                 className="nav-link dropdown-toggle"
@@ -72,33 +80,23 @@ const Navbar = () => {
               <ul className="dropdown-menu" aria-labelledby="categoryDropdown">
                 {categories.map((cat) => (
                   <li key={cat}>
-                    <Link
-                      className="dropdown-item text-capitalize"
-                      to={`/category/${cat}`}
-                    >
+                    <Link className="dropdown-item text-capitalize" to={`/category/${cat}`}>
                       {cat}
                     </Link>
                   </li>
                 ))}
               </ul>
             </li>
-
             <li className="nav-item">
-              <Link className="nav-link" to="/about">
-                About
-              </Link>
+              <Link className="nav-link" to="/about">About</Link>
             </li>
-
             <li className="nav-item">
-              <Link className="nav-link" to="/contact">
-                Contact
-              </Link>
+              <Link className="nav-link" to="/contact">Contact</Link>
             </li>
           </ul>
-
           <button
             onClick={handleLogOut}
-            className="btn btn-outline-light"
+            className={`btn ${isHome && !scrolled ? "btn-outline-light" : "btn-dark"}`}
             type="button"
           >
             Logout
