@@ -16,7 +16,7 @@ const Footer = () => {
         <div className="row">
           {/* About Section */}
           <div className="col-md-6 mb-4">
-            <h3>About Us</h3>
+            <h3 className="mb-3" >About Us</h3>
             <p>
               Welcome to MyBlog — your go-to platform for inspiring travel
               stories, tech insights, wellness tips, and much more. Join our
