@@ -1,5 +1,11 @@
 /* src/pages/About.css */
+:root {
+  --primary-font: "Mulish", sans-serif;
+}
 
+h1 {
+  font-family: var(--primary-font);
+}
 .about-page {
   animation: fadeIn 1s ease-in-out;
 }

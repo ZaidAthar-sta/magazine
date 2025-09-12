@@ -28,8 +28,8 @@ const CategoryPage = () => {
 
   return (
     <div className="container mt-5">
-      <h2 className="mb-4 text-center fw-bold animate-title">
-        🗂 Posts in "{category.replace("-", " ")}"
+      <h2 className="mb-4  fw-bold py-3 animate-title">
+        Posts in {category.replace("-", " ")}
       </h2>
 
       {loading && <p className="text-center">Loading...</p>}

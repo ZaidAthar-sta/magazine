@@ -7,7 +7,7 @@ import topPost from "../../assets/top-post1.jpg.webp";
 const Contact = () => {
   return (
     <div className="container my-5 contact-container">
-      <h2 className="text-center text-white p-3 mb-5 fw-bold animate-title">📬 Contact Us</h2>
+      <h2 className="text-center p-3 mb-5 fw-bold animate-title">📬 Contact Us</h2>
 
       <div className="row align-items-center justify-content-center">
         {/* Image Section */}
