@@ -66,9 +66,9 @@ const CreatePost = () => {
   };
 
   return (
-    <div className="container create-post-container my-5">
-      <div className="create-post-wrapper mx-auto shadow-sm p-5 rounded">
-        <h2 className="text-center mb-4">📝 Create New Post</h2>
+    <div className="container create-post-container py-5 ">
+      <div className="create-post-wrapper mx-auto p-5 rounded">
+        <h2 className="mb-4">📝 Create New Post</h2>
         <form onSubmit={handleCreate} encType="multipart/form-data">
           <div className="mb-4">
             <label htmlFor="title" className="form-label">Title</label>

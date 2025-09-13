@@ -12,6 +12,13 @@
 .contact-form input,
 .contact-form textarea {
   transition: border-color 0.3s ease;
+  width: 100%;
+}
+
+.contact-form .input-div {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 25px;
 }
 
 .contact-form input:focus,

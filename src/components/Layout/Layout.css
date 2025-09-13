@@ -1,0 +1,17 @@
+.main-wrapper {
+  transition: box-shadow 0.3s ease;
+  padding-top: 0; /* Default */
+}
+
+/* .with-shadow {
+  box-shadow: 0 3px 25px rgba(0, 0, 0, 0.2);
+} */
+
+.no-shadow {
+  box-shadow: none;
+  padding-top: 0;
+}
+
+.main-wrapper.with-shadow {
+  padding-top: 70px; /* space for fixed navbar */
+}

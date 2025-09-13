@@ -8,10 +8,10 @@ const Home = () => {
   return (
     <div className="home-container">
       <div className="hero-banner d-flex align-items-center justify-content-center text-center text-white">
-        <div className="hero-overlay p-5 rounded shadow-sm">
-          <h1 className="display-4 fw-bold animate-fade-in">
+        <div className="hero-overlay mt-5 p-5 rounded shadow-sm">
+          <h1 className="display-4 fw-bold text-black animate-fade-in">
             <i>
-              Welcome to
+              <h1 style={{fontSize:"40px",fontWeight:"700",wordSpacing:"10px" }} > WELCOME TO</h1>
               <span style={{ color: "#fb8c00" }}> Morning's </span>
               <span style={{ color: "red" }}>Magazine</span>
             </i>
@@ -20,9 +20,9 @@ const Home = () => {
             Discover insightful posts, share your stories, and connect with a
             vibrant community.
           </p>
-          <a href="/all" className="btn explore-btn btn-primary btn-lg mt-3 animate-button">
+          {/* <a href="/all" className="btn explore-btn btn-primary btn-lg mt-3 animate-button">
             Explore
-          </a>
+          </a> */}
         </div>
       </div>
 

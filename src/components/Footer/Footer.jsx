@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./Footer.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -8,15 +8,38 @@ import {
   faLinkedinIn,
   faGithub,
 } from "@fortawesome/free-brands-svg-icons";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const Footer = () => {
+  const [scrolled, setScrolled] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const isHome = location.pathname === "/";
+
+  const handleLogOut = () => {
+    localStorage.removeItem("token");
+    navigate("/login");
+  };
+
+  useEffect(() => {
+    if (!isHome) return;
+
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 80);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [isHome]);
+
   return (
     <footer className="footer pt-4 pb-2 bg-dark text-white">
       <div className="container">
         <div className="row">
           {/* About Section */}
           <div className="col-md-6 mb-4">
-            <h3 className="mb-3" >About Us</h3>
+            <h3 className="mb-3">About Us</h3>
             <p>
               Welcome to MyBlog — your go-to platform for inspiring travel
               stories, tech insights, wellness tips, and much more. Join our
@@ -49,7 +72,7 @@ const Footer = () => {
           {/* Social Media */}
           <div className="col-md-3 mb-4">
             <h5>Follow Us</h5>
-            <div className="social-icons text-center d-flex gap-3">
+            <div className="social-icons mt-4 text-center d-flex gap-3">
               <a
                 href="https://facebook.com"
                 target="_blank"
@@ -91,8 +114,16 @@ const Footer = () => {
                 <FontAwesomeIcon icon={faGithub} />
               </a>
             </div>
+            <button
+              onClick={handleLogOut}
+              className={`btn mt-4 ${
+                isHome && !scrolled ? "btn-outline-light" : "btn-dark"
+              }`}
+              type="button"
+            >
+              Logout
+            </button>
           </div>
-     
         </div>
         <hr className="bg-light" />
         <p className="text-center m-0">

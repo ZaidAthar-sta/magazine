@@ -1,16 +1,16 @@
 .hero-banner {
   height: 90vh;
-  background: url("../../assets/top-post1.jpg.webp") center center / cover
+  background: url("../../assets/mountain.jpg") center center / cover
     no-repeat;
   position: relative;
 }
 
 .hero-overlay {
-  background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent dark overlay */
   padding: 3rem;
   border-radius: 15px;
   max-width: 700px;
   backdrop-filter: blur(3px);
+  background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent dark overlay */
 }
 
 .hero-overlay h1,

@@ -5,8 +5,8 @@ import "./About.css";
 
 const About = () => {
   return (
-    <div className="container mt-5 about-page animate-fade-in">
-      <div className="row align-items-center">
+    <div className="container about-page animate-fade-in">
+      <div className="row py-5">
         <div className="col-md-6 mb-4 mb-md-0">
           <img
             src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f"
