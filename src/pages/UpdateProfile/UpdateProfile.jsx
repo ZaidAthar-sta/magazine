@@ -15,7 +15,7 @@ const UpdateProfile = () => {
 
   const [preview, setPreview] = useState(null);
   const [message, setMessage] = useState("");
-  const { backendURL,token } = useContext(blogContext);
+  const { backendURL, token } = useContext(blogContext);
 
   // Simulate fetching current user data (optional)
   useEffect(() => {
@@ -39,7 +39,7 @@ const UpdateProfile = () => {
     };
 
     fetchUser();
-  }, []);
+  }, [backendURL, token]);
 
   const handleChange = (e) => {
     if (e.target.name === "image") {
