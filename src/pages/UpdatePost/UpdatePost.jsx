@@ -38,7 +38,7 @@ const UpdatePost = () => {
     };
 
     fetchPost();
-  }, [id, token]);
+  }, [id, token, backendURL]);
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -54,7 +54,7 @@ const UpdatePost = () => {
     setError("");
 
     try {
-      const res = await axios.post(`${backendURL}/api/post/update/${id}`, post, {
+      await axios.post(`${backendURL}/api/post/update/${id}`, post, {
         headers: {
           Authorization: `Bearer ${token}`,
           "Content-Type": "application/json",

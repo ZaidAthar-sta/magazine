@@ -60,7 +60,7 @@ const SinglePost = () => {
   useEffect(() => {
     fetchPost();
     fetchComments();
-  }, [id]);
+  }, [id, fetchComments, fetchPost]);
 
   // SUBMIT COMMENT
   const handleCommentSubmit = async (e) => {

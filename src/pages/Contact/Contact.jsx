@@ -2,7 +2,6 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./Contact.css";
-import topPost from "../../assets/top-post1.jpg.webp";
 
 const Contact = () => {
   return (
