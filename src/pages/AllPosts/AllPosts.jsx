@@ -2,7 +2,6 @@ import React, { useContext, useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import blogContext from "../../context/blogContext";
 import axios from "axios";
-import { Link } from "react-router-dom";
 import { jwtDecode } from "jwt-decode";
 import PostCard from "../../components/PostCard/PostCard";
 import "./AllPosts.css";
@@ -10,8 +9,6 @@ import "./AllPosts.css";
 const AllPosts = () => {
   const { backendURL } = useContext(blogContext);
   const [posts, setPosts] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState("");
   const [commentsCount, setCommentsCount] = useState({});
   const [visibleComments, setVisibleComments] = useState({}); // ⬅️ New
   const [comments, setComments] = useState({}); // ⬅️ New

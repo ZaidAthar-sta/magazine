@@ -24,7 +24,7 @@ const CategoryPage = () => {
       }
     };
     fetch();
-  }, [category]);
+  }, [category,backendURL]);
 
   return (
     <div className="container mt-5">
