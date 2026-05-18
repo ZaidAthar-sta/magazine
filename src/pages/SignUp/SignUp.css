@@ -1,0 +1,34 @@
+.signup-container {
+  min-height: 100vh;
+  background: linear-gradient(to right, #a8e6cf, #dcedc1);
+  padding: 2rem;
+}
+
+.signup-card {
+  max-width: 900px;
+  width: 100%;
+  min-height: 500px;
+  background-color: #fff;
+  animation: slideUp 0.7s ease;
+}
+
+.signup-img {
+  object-fit: cover;
+  height: 100%;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.signup-card input:focus {
+  border-color: #43a047;
+  box-shadow: 0 0 0 0.2rem rgba(76, 175, 80, 0.2);
+}

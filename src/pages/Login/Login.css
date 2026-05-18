@@ -1,0 +1,42 @@
+.login-wrapper {
+  min-height: 100vh;
+  background: linear-gradient(to right, #3f51b5, #5c6bc0);
+  padding: 2rem;
+}
+
+.login-card {
+  max-width: 900px;
+  width: 100%;
+  background-color: #ffffff;
+  animation: fadeIn 0.8s ease;
+}
+
+.login-img {
+  object-fit: cover;
+  height: 100%;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.login-card input:focus {
+  border-color: #3f51b5;
+  box-shadow: 0 0 0 0.2rem rgba(63, 81, 181, 0.25);
+}
+
+.login-card a {
+  color: #3f51b5;
+  text-decoration: none;
+}
+
+.login-card a:hover {
+  text-decoration: underline;
+}

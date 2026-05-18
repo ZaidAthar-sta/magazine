@@ -1,0 +1,66 @@
+.update-profile-container {
+  max-width: 500px;
+  margin: 40px auto;
+  background: #f7f7f7;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.update-profile-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.update-profile-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.update-profile-form label {
+  display: flex;
+  flex-direction: column;
+  font-weight: 500;
+  color: #333;
+}
+
+.update-profile-form input[type="text"],
+.update-profile-form input[type="email"],
+.update-profile-form input[type="password"],
+.update-profile-form input[type="file"] {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.image-preview {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.image-preview img {
+  max-width: 100px;
+  border-radius: 50%;
+  border: 2px solid #999;
+}
+
+button[type="submit"] {
+  padding: 10px 20px;
+  background-color: #0056b3;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #004094;
+}
+
+.message {
+  text-align: center;
+  color: green;
+  margin-bottom: 15px;
+}
