@@ -48,11 +48,8 @@ const AllPosts = () => {
         });
         setCommentsCount(countsObj);
       } catch (err) {
-        setError("Failed to fetch posts");
         console.error(err);
-      } finally {
-        setLoading(false);
-      }
+      } 
     };
 
     fetchPosts();
